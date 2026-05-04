@@ -8,29 +8,29 @@
 
 <h1>🏈 Fantasy League HQ</h1>
 
+<input id="username" placeholder="Enter your name">
+
 <nav>
-<button onclick="showPage('rankings')">Rankings</button>
 <button onclick="showPage('chat')">Chat</button>
+<button onclick="showPage('rankings')">Rankings</button>
 <button onclick="showPage('history')">History</button>
 </nav>
 
-<div id="rankings" class="page">
-<h2>League Rankings</h2>
-<ul id="rankingsList"></ul>
-</div>
-
 <div id="chat" class="page">
-<h2>League Chat</h2>
 <div id="messages"></div>
-<input id="messageInput" placeholder="Type message...">
+<input id="messageInput" placeholder="Message">
 <button onclick="sendMessage()">Send</button>
 </div>
 
+<div id="rankings" class="page">
+<ul id="rankingsList"></ul>
+</div>
+
 <div id="history" class="page">
-<h2>League History</h2>
 <ul id="historyList"></ul>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="script.js"></script>
 </body>
 </html>
