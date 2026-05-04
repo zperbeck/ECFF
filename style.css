@@ -32,3 +32,31 @@ box.innerHTML = data.map(m =>
 
 // 🔁 Auto-refresh chat
 setInterval(loadMessages, 2000);
+
+  async function loadRankings() {
+const { data } = await supabaseClient
+.from("rankings")
+.select("*")
+.order("points", { ascending: false });
+
+document.getElementById("rankingsList").innerHTML =
+data.map(t =>
+`<li>${t.team} (${t.record}) - ${t.points} pts</li>`
+).join("");
+}
+
+loadRankings();
+
+async function loadHistory() {
+const { data } = await supabaseClient
+.from("history")
+.select("*")
+.order("year", { ascending: false });
+
+document.getElementById("historyList").innerHTML =
+data.map(h =>
+`<li>${h.year}: ${h.champion} beat ${h.runner_up}</li>`
+).join("");
+}
+
+loadHistory();
