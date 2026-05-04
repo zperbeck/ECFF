@@ -1,21 +1,14 @@
 body {
-font-family: Arial;
-text-align: center;
 background: #0b1c2c;
 color: white;
+font-family: Arial;
+text-align: center;
 }
 
-nav button {
-margin: 10px;
-padding: 10px;
-}
-
-.page {
-display: none;
-}
+.page { display: none; }
 
 #messages {
-height: 200px;
+height: 250px;
 overflow-y: scroll;
 border: 1px solid white;
 margin: 10px;
